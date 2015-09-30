@@ -1,2 +1,2 @@
-# NoteSharing-Application
-an application to share online notes 
+###NoteSharer
+An application to share notes
