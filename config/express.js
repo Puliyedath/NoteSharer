@@ -67,7 +67,9 @@ module.exports = function(db) {
 		app.use(morgan('dev'));
 
 		// Disable views cache
-		app.set('view cache', false);
+	    app.set('view cache', false);
+	    //this will disable the caching for swig templates - very important
+	    require('swig').setDefaults({cache: false});
 	} else if (process.env.NODE_ENV === 'production') {
 		app.locals.cache = 'memory';
 	}
