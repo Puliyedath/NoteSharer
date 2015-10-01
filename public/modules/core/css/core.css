@@ -1,9 +1,272 @@
-.content {
-	margin-top: 50px;
-}
-.undecorated-link:hover {
-	text-decoration: none;
-}
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-	display: none !important;
-}
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,900");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+/* Reset of browser settings */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+body {
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.clearfix:after {
+  display: table;
+  clear: both;
+  content: ''; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+/* containers */
+.container {
+  margin-left: auto;
+  margin-right: auto; }
+
+.container {
+  width: 1320px; }
+
+a {
+  text-decoration: none;
+  outline: none; }
+
+/* the styling for the page */
+body {
+  background: #f5f7fa;
+  line-height: 1.70em;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  color: #656b74;
+  font-size: 16pt; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #313a45; }
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: inherit;
+  text-decoration: none;
+  outline: none; }
+  h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    text-decoration: none;
+    cursor: pointer; }
+
+h2 {
+  font-size: 1.5em;
+  margin: 0 0 1.5em 0; }
+
+h3 {
+  font-size: 1.1em;
+  margin: 0 0 0.5em 0; }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1320px; }
+
+a {
+  color: #3B7DBC; }
+  a:hover {
+    text-decoration: underline; }
+
+/*general styles applied to the sheet */
+.icon {
+  text-decoration: none; }
+  .icon:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 1.25em;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.25em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+.button {
+  border-radius: 0.5em;
+  padding: 0.5em;
+  font-size: 1.2em;
+  opacity: 0.7; }
+
+/* body and container resizing */
+@media screen and (max-width: 1680px) {
+  body .pennant span {
+    font-size: 96px; } }
+
+@media screen and (max-width: 980px) {
+  body {
+    font-size: 13pt; } }
+
+@media screen and (max-width: 840px) {
+  body {
+    font-size: 12pt; } }
+
+.container {
+  width: 100%; }
+
+/*wrappers */
+#header-wrapper {
+  background-color: #ffffff;
+  position: fixed;
+  width: 100%;
+  padding: 0.5em 0;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.15); }
+  #header-wrapper #header {
+    position: relative;
+    /*put things specific to the header here */
+    padding: 0 1em 0 0.5em;
+    /*clearfix for floats */ }
+    #header-wrapper #header #logo {
+      float: left;
+      font-size: 1.3em;
+      font-weight: 600; }
+    #header-wrapper #header nav {
+      float: right;
+      display: inline-block; }
+      #header-wrapper #header nav a {
+        padding: 0 0.5em; }
+        #header-wrapper #header nav a:hover {
+          font-style: italic;
+          text-decoration: none;
+          font-weight: 600; }
+    #header-wrapper #header:after {
+      content: '';
+      clear: both;
+      display: block; }
+
+#main-wrapper {
+  position: relative;
+  background: #9E9E9E;
+  background-attachment: fixed;
+  background-image: url("../img/backgrounds/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 3em 0 0 0; }
+  #main-wrapper:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #9E9E9E;
+    opacity: 0.6; }
+
+#banner-wrapper {
+  position: relative;
+  color: black; }
+  #banner-wrapper #banner {
+    padding-bottom: 1em; }
+  #banner-wrapper a {
+    color: black; }
+  #banner-wrapper footer {
+    text-align: center;
+    opacity: 0.9;
+    color: black; }
+  #banner-wrapper header {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    opacity: 0.9; }
+    #banner-wrapper header h2 {
+      margin: 0 auto;
+      font-weight: 800;
+      color: black;
+      text-align: center;
+      font-size: 1.8em; }
+    #banner-wrapper header p {
+      margin: 0 auto;
+      font-weight: 600;
+      text-align: center; }
+  #banner-wrapper ul.pennants {
+    margin: 0 auto;
+    padding: 0;
+    width: 80%;
+    text-align: center;
+    opacity: 0.9; }
+    #banner-wrapper ul.pennants li {
+      display: inline-block;
+      padding: 1em; }
+      #banner-wrapper ul.pennants li a.pennant {
+        border: 0.5em solid white;
+        height: 10em;
+        width: 10em;
+        display: block;
+        border-radius: 100%;
+        line-height: 10em; }
+        #banner-wrapper ul.pennants li a.pennant span {
+          height: 5em; }
+  #banner-wrapper .button {
+    z-index: 10000;
+    color: white;
+    background: black; }
+
+.row {
+  width: 100%;
+  display: inline-block; }
+  .row .col-1-3 {
+    display: inline-block;
+    vertical-align: middle; }
+  .row .col-2-3 {
+    display: inline-block;
+    width: 69%;
+    vertical-align: middle; }
+
+#aboutMe-wrapper {
+  display: 100%;
+  border: 1px solid black;
+  position: relative;
+  color: white; }
+  #aboutMe-wrapper:before {
+    content: '';
+    position: absolute;
+    background: black;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.7; }
+  #aboutMe-wrapper #my-Details {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0.9; }
+  #aboutMe-wrapper .row {
+    text-align: center; }
+    #aboutMe-wrapper .row .col-2-3 {
+      text-align: left; }
+      #aboutMe-wrapper .row .col-2-3 p {
+        font-size: 1.3em;
+        font-style: italic;
+        line-height: 1.3em; }
+      #aboutMe-wrapper .row .col-2-3 a {
+        padding: 0 0.5em 0 0;
+        color: white; }
+        #aboutMe-wrapper .row .col-2-3 a:hover {
+          color: #9ECCAE;
+          font-size: 1.1em; }
+  #aboutMe-wrapper img {
+    padding: 0.5em;
+    margin: 0 auto;
+    line-height: 5em;
+    height: 6em;
+    width: 6em;
+    overflow: hidden;
+    border-radius: 100%; }
