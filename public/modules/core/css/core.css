@@ -270,3 +270,35 @@ a {
     width: 6em;
     overflow: hidden;
     border-radius: 100%; }
+
+.signup-wrapper {
+  background: black !important;
+  opacity: 0.7; }
+
+.login-wrapper {
+  background: gray;
+  opacity: 0.7;
+  padding: 0.5em 0; }
+  .login-wrapper .login {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 1em 0;
+    border-radius: 1em;
+    width: 50%;
+    margin: 0 auto; }
+    .login-wrapper .login p {
+      color: black;
+      padding-bottom: 0.5em; }
+      .login-wrapper .login p input {
+        padding: 0 0.5em;
+        box-shadow: 0.5em;
+        text-align: left;
+        font-style: italic; }
+      .login-wrapper .login p .button {
+        font-style: italic;
+        background: black;
+        color: white;
+        line-height: 1.3em;
+        font-size: 1.3em;
+        border: 2px solid white; }
