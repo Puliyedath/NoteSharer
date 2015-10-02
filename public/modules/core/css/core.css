@@ -107,11 +107,15 @@ a {
 
 @media screen and (max-width: 980px) {
   body {
-    font-size: 13pt; } }
+    font-size: 13pt; }
+    body .pennant span {
+      font-size: 80px; } }
 
 @media screen and (max-width: 840px) {
   body {
-    font-size: 12pt; } }
+    font-size: 12pt; }
+    body .pennant span {
+      font-size: 70px; } }
 
 .container {
   width: 100%; }
@@ -301,6 +305,7 @@ a {
         font-style: italic;
         background: black;
         color: white;
-        line-height: 1.3em;
-        font-size: 1.3em;
-        border: 2px solid white; }
+        line-height: 1.1em;
+        font-size: 1.1em;
+        border: 2px solid white;
+        padding: 0.2em 0.3em; }

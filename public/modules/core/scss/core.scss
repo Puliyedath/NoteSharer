@@ -143,11 +143,17 @@ body{
 
     @media #{$minitablet}{
 	font-size: 13pt;
+	.pennant span{
+	    font-size: 80px;
+	}
 
     }
 
     @media #{$phone}{
 	font-size: 12pt;
+	.pennant span{
+	    font-size: 70px;
+	}
     }
 }
 
@@ -411,12 +417,12 @@ body{
 		font-style: italic;
 		background: black;
 		color: white;
-		line-height: 1.3em;
-		font-size: 1.3em;
+		line-height: 1.1em;
+		font-size: 1.1em;
 		border: 2px solid white;
+		padding: 0.2em 0.3em;
 	    }
 		  
 	}
     }
 }
-
