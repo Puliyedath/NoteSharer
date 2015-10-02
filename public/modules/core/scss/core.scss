@@ -278,6 +278,8 @@ body{
 	li{
 	    display: inline-block;
 	    padding: 1em;
+	    font-style:italic;
+	    font-weight:700;
 
 	    a.pennant{
 		border: 0.5em solid white;
@@ -376,7 +378,7 @@ body{
 }
 
 .signup-wrapper{
-    background: black !important;;
+    background: black !important;
     opacity: 0.7;
 }
 
