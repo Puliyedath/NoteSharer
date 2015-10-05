@@ -123,6 +123,34 @@ a {
   width: 100%; }
 
 /*wrappers */
+#search-wrapper {
+  position: relative;
+  padding: 0 0.2em; }
+  #search-wrapper #add {
+    float: right;
+    border-radius: 100%;
+    overflow: hidden;
+    background: white;
+    opacity: 0.9;
+    display: inline-block;
+    height: 2.5em;
+    width: 2.5em;
+    color: black;
+    text-align: center;
+    box-shadow: 0.1em 0.1em 0.1em black; }
+    #search-wrapper #add:hover {
+      color: white;
+      background: black; }
+    #search-wrapper #add:active {
+      font-size: 0.9em; }
+    #search-wrapper #add * {
+      line-height: 2.5em;
+      height: 2.5em; }
+  #search-wrapper:after {
+    content: '';
+    display: block;
+    clear: both; }
+
 #header-wrapper {
   background-color: #ffffff;
   position: fixed;

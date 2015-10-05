@@ -168,6 +168,47 @@ body{
 
 
 /*wrappers */
+#search-wrapper{
+    position: relative;
+    padding: 0 0.2em;
+
+
+    #add{
+	float:right;
+	border-radius:100%;
+	overflow: hidden;
+	background: white;
+	opacity: 0.9;
+	display:inline-block;
+	height:2.5em;
+	width:2.5em;
+	color: black;
+	text-align:center;
+	box-shadow: 0.1em 0.1em 0.1em black;
+
+	&:hover{
+	    color: white;
+	    background: black;
+	}
+
+	&:active{
+	    font-size: 0.9em;
+	}
+	
+
+	& *{
+	    line-height: 2.5em;
+	    height: 2.5em;
+	}
+    }
+
+    &:after{
+	content: '';
+	display: block;
+	clear: both;
+    }
+    
+}
 
 #header-wrapper{
     background-color: #ffffff;
