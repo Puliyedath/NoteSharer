@@ -18,9 +18,9 @@ var applicationJavaScriptFiles,
     applicationTestFiles;
 
 gulp.task('jshint', function() {
-    gulp.src(['gulpFile.js', 'server.js', 'config/**/*.js', 'app/**/*.js', 'public/js/**/*.js', 'public/modules/**/*.js'])
-	.pipe(jshint())
-	.pipe(jshint.reporter('default'));
+	gulp.src(['gulpFile.js', 'server.js', 'config/**/*.js', '!config/**/flycheck*.js', 'app/**/*.js', 'public/js/**/*.js', 'public/modules/**/*.js'])
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'));
 });
 
 gulp.task('csslint', function() {
@@ -83,9 +83,6 @@ gulp.task('watch', function() {
     //gulp.watch(['public/**/css/*.css'], ['csslint']);
     gulp.watch(['public/**/scss/*.scss'], ['sassMain']);
 
-    gulp.watch(['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js', 'public/modules/**/views/*.html', 'public/js/**/*.js', 'public/modules/**/*.js', 'public/**/css/*.css']).on('change', function(file) {
-	server.changed(file.path);
-    });
 });
 
 gulp.task('loadConfig', function() {

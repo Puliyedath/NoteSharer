@@ -13,7 +13,7 @@ module.exports = function() {
 			usernameField: 'username',
 			passwordField: 'password'
 		},
-		function(username, password, done) {
+				       function(username, password, done) {
 			User.findOne({
 				username: username
 			}, function(err, user) {
