@@ -1,5 +1,9 @@
-<div id="search-wrapper">
-  <div id="add">
-    <span class="icon fa-sticky-note"></span>
+<div data-ng-controller="NotesController">
+  <div id="search-wrapper">
+    <div id="add">
+      <span ng-click="toggle()" class="icon fa-sticky-note"></span>
+    </div>
   </div>
+  <notes-directive visible="visible"></notes-directive>
 </div>
+

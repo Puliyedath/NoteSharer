@@ -3,14 +3,12 @@
 angular.module('notes').directive('notesDirective', [
 	function() {
 		return {
-			template: '<div></div>',
+			scope:{
+				visible: '=visible'
+			},
+			templateUrl: '/modules/notes/views/create-note.client.view.html',
 			restrict: 'E',
-			link: function postLink(scope, element, attrs) {
-				// Notes directive directive logic 
-				// ...
-				
-				element.text('this is the notesDirective directive');
-			}
+			replace: true
 		};
 	}
 ]);
