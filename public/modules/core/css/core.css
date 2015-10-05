@@ -108,12 +108,14 @@ a {
 @media screen and (max-width: 980px) {
   body {
     font-size: 13pt; }
+    body #banner header.major {
+      line-height: 2em; }
     body .pennant span {
       font-size: 80px; } }
 
 @media screen and (max-width: 840px) {
   body {
-    font-size: 12pt; }
+    font-size: 11pt; }
     body .pennant span {
       font-size: 70px; } }
 
@@ -175,7 +177,8 @@ a {
 
 #banner-wrapper {
   position: relative;
-  color: black; }
+  color: black;
+  padding: 1em 0 3em 0; }
   #banner-wrapper #banner {
     padding-bottom: 1em; }
   #banner-wrapper a {
@@ -188,17 +191,21 @@ a {
     margin: 0 auto;
     width: 100%;
     text-align: center;
-    opacity: 0.9; }
+    opacity: 0.9;
+    padding-bottom: 2em; }
     #banner-wrapper header h2 {
       margin: 0 auto;
       font-weight: 800;
       color: black;
       text-align: center;
-      font-size: 1.8em; }
+      font-size: 2.5em;
+      padding-bottom: 0.3em; }
     #banner-wrapper header p {
       margin: 0 auto;
       font-weight: 600;
-      text-align: center; }
+      text-align: center;
+      font-size: 1.4em;
+      font-style: italic; }
   #banner-wrapper ul.pennants {
     margin: 0 auto;
     padding: 0;

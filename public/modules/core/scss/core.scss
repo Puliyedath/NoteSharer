@@ -143,6 +143,11 @@ body{
 
     @media #{$minitablet}{
 	font-size: 13pt;
+	#banner{
+	    header.major{
+		line-height: 2em;
+	    }
+	}
 	.pennant span{
 	    font-size: 80px;
 	}
@@ -150,7 +155,7 @@ body{
     }
 
     @media #{$phone}{
-	font-size: 12pt;
+	font-size: 11pt;
 	.pennant span{
 	    font-size: 70px;
 	}
@@ -237,6 +242,7 @@ body{
 #banner-wrapper{
     position: relative;
     color: black;
+    padding: 1em 0 3em 0;
 
     #banner{
 	padding-bottom: 1em;
@@ -257,6 +263,7 @@ body{
 	width: 100%;
 	text-align: center;
 	opacity: 0.9;
+	padding-bottom: 2em;
 	
 
 	& h2{
@@ -264,13 +271,16 @@ body{
 	    font-weight: 800;
 	    color: black;
 	    text-align: center;
-	    font-size:1.8em;
+	    font-size:2.5em;
+	    padding-bottom: 0.3em;
 	}
 
 	& p {
 	    margin: 0 auto;
 	    font-weight: 600;
 	    text-align: center;
+	    font-size: 1.4em;
+	    font-style: italic;
 	}
     }
 
