@@ -48,18 +48,9 @@
 			</header>
 
 			<div id="main-wrapper">
-				<div id="banner-wrapper" ng-include="'/modules/core/views/banner.client.view.html'">
-				</div>
-
-				<div id="aboutMe-wrapper" ng-include="'/modules/core/views/details.client.view.html'">
-				</div>
-
-				<div class="login-wrapper" ng-include="'/modules/core/views/login.client.view.html'">
-				</div>
-
-				<div class="signup-wrapper login-wrapper" ng-include="'/modules/core/views/signup.client.view.html'">
-				</div>
+				{% block content %} {% endblock %}
 			</div>
+
 		</div>
 
 
