@@ -18,7 +18,15 @@ var applicationJavaScriptFiles,
     applicationTestFiles;
 
 gulp.task('jshint', function() {
-	gulp.src(['gulpFile.js', 'server.js', 'config/**/*.js', '!config/**/flycheck*.js', 'app/**/*.js', 'public/js/**/*.js', 'public/modules/**/*.js'])
+	gulp.src(['gulpFile.js', 'server.js',
+		  'config/**/*.js',
+		  '!config/**/flycheck*.js',
+		  'app/**/*.js',
+		  '!app/**/flycheck*.js',
+		  'public/js/**/*.js',
+		  '!public/js/**/flycheck*.js',
+		  'public/modules/**/*.js',
+		  '!public/modules/**/*.js'])
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 });
@@ -79,7 +87,7 @@ gulp.task('karma', function () {
 
 gulp.task('watch', function() {
     var server = livereload();
-    gulp.watch(['gulpFile.js', 'server.js', 'config/**/*.js', 'app/**/*.js', 'public/js/**/*.js', 'public/modules/**/*.js'], ['jshint']);
+    gulp.watch(['gulpFile.js', 'server.js', 'config/**/[:lower:]*.js', 'app/**/[:lower:]*.js', 'public/js/**/[:lower:]*.js', 'public/modules/**/[:lower:]*.js'], ['jshint']);
     //gulp.watch(['public/**/css/*.css'], ['csslint']);
     gulp.watch(['public/**/scss/*.scss'], ['sassMain']);
 
