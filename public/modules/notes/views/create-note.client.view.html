@@ -1,13 +1,13 @@
 <section ng-show="visible" class="note">
-  <form action="" method="" data-ng-submit="create()" novalidate>
-    <div class="header">
-	    <input type="text" name="title" placeholder="Title" />
-    </div>
-    <div class="contents">
-      <textarea placeholder="notes details" />
-    </div>
-    <div class="footer">
-	    <input class="button "type="submit" name="add" value="addNote" />
-    </div>
-  </form>
+	<form data-ng-submit="submit()" autocomplete="off" novalidate>
+		<div class="header">
+			<input type="text" ng-model="note.name" name="title" placeholder="Title" />
+		</div>
+		<div class="contents">
+			<textarea ng-model="note.description" placeholder="notes details" />
+		</div>
+		<div class="footer">
+			<input ng-show="show" class="button" type="submit" name="add" value="addNote" />
+		</div>
+	</form>
 </section>

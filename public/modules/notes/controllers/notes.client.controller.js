@@ -10,22 +10,30 @@ angular.module('notes')
 			     
 			     $scope.authentication = Authentication;
 
+			     $scope.passData = function(note){
+				     $scope.note = note;
+				     this.create();
+			     };
+
 			     // Create new Note
 			     $scope.create = function() {
         			     // Create new Note object
 				     var note = new Notes({
-					     name: this.name
+					     name: this.note.name,
+					     description: this.note.description
 				     });
 
 				     // Redirect after save
 				     note.$save(function(response) {
-					     $location.path('notes/' + response._id);
+					     $location.path('/hareesh');
+					     $scope.visible = false;
 				     }, function(errorResponse) {
 					     $scope.error = errorResponse.data.message;
 				     });
 
 				     // Clear form fields
 				     this.name = '';
+				     this.note =''; //line 14 above
 			     };
 
 			     // Remove existing Note
@@ -57,9 +65,9 @@ angular.module('notes')
 			     };
 
 			     // Find a list of Notes
-			     $scope.find = function() {
+			     $scope.find = (function() {
 				     $scope.notes = Notes.query();
-			     };
+			     }());
 
 			     // Find existing Note
 			     $scope.findOne = function() {
