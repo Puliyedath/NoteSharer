@@ -16,6 +16,12 @@ var NoteSchema = new Schema({
 		required: 'Please fill Note name',
 		trim: true
 	},
+	description: {
+		type: String,
+		default: '',
+		required: 'Please fill Note description',
+		trim: true
+	},
 	created: {
 		type: Date,
 		default: Date.now
