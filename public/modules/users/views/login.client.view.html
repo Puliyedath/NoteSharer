@@ -4,6 +4,11 @@
       <span ng-click="toggle()" class="icon fa-sticky-note"></span>
     </div>
   </div>
-  <notes-directive visible="visible"></notes-directive>
+  <notes-directive show="true" on-submit="passData(note)" visible="{{visible}}"></notes-directive>
+
+  <div ng-repeat="note in notes" style="padding: 1em 0 ">
+	    <notes-directive note="note" on-submit="passData(note)" visible="visible"></notes-directive>
+  </div>
+  
 </div>
 
