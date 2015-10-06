@@ -13,14 +13,35 @@ angular.module('notes').directive('notesDirective', [
 			link: function($scope, element, attrs){
 				$scope.note = $scope.note || {};
 				$scope.show = attrs.show;
-				
-				console.log($scope.note);
+				$scope.disabled = true;
+				element.onclick = function(){
+					$scope.disabled = true;
+				};
+			
 			},
 			controller: function($scope){
 				$scope.submit = function(){
 					//pass name and descriptoin to the parent scop
-					//this.onSubmit({note:{name: $scope.name, description: $scope.description}});
 					this.onSubmit({note: $scope.note});
+				};
+
+				$scope.update  = function(){
+					$scope.note.update = true;
+					$scope.disabled = true;
+					this.submit();
+				};
+
+				$scope.delete  = function(){
+					$scope.note.delete = true;
+					$scope.disabled = true;
+					this.submit();
+				};
+
+				$scope.toggle = function(){
+					if($scope.disabled){
+						$scope.disabled = false;
+					}
+
 				};
 			},
 			replace: true

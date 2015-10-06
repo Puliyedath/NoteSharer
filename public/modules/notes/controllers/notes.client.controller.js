@@ -12,7 +12,14 @@ angular.module('notes')
 
 			     $scope.passData = function(note){
 				     $scope.note = note;
-				     this.create();
+
+				     if(note.delete){
+					     this.remove(note);
+				     }else if(note.update){
+					     this.update();
+				     }else{
+					     this.create();
+				     }
 			     };
 
 			     // Create new Note
@@ -41,7 +48,6 @@ angular.module('notes')
 			     $scope.remove = function(note) {
 				     if (note) {
 					     note.$remove();
-
 					     for (var i in $scope.notes) {
 						     if ($scope.notes[i] === note) {
 							     $scope.notes.splice(i, 1);
@@ -49,9 +55,11 @@ angular.module('notes')
 					     }
 				     } else {
 					     $scope.note.$remove(function() {
-						     $location.path('notes');
+						     $location.path('/hareesh');
 					     });
 				     }
+				     $scope.visible = false;
+
 			     };
 
 			     // Update existing Note
@@ -59,10 +67,11 @@ angular.module('notes')
 				     var note = $scope.note;
 
 				     note.$update(function() {
-					     $location.path('notes/' + note._id);
+					     $location.path('/hareesh');
 				     }, function(errorResponse) {
 					     $scope.error = errorResponse.data.message;
 				     });
+
 			     };
 
 			     // Find a list of Notes
