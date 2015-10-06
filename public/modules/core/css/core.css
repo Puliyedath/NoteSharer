@@ -356,7 +356,7 @@ a {
   margin: 0;
   margin: 0 auto;
   width: 50%;
-  height: 13em;
+  height: 12em;
   background-color: #fff;
   box-shadow: 0.3em 0.2em 0.5em 0 black; }
   .note:before {
@@ -369,7 +369,7 @@ a {
   .note form {
     margin: 0;
     position: relative;
-    height: 13em; }
+    height: 12em; }
     .note form .header {
       padding: 0.2em 0.2em;
       font-weight: 600;
@@ -392,7 +392,8 @@ a {
         padding: 0.2em;
         height: 10em;
         resize: none;
-        font-size: 0.9em;
+        font-size: 0.7em;
+        line-height: 1.4em;
         border-bottom: 1px solid black; }
     .note form .footer {
       position: absolute;

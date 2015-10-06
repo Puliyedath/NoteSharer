@@ -26,6 +26,7 @@ angular.module('notes')
 				     // Redirect after save
 				     note.$save(function(response) {
 					     $location.path('/hareesh');
+					     $scope.notes.unshift(note);
 					     $scope.visible = false;
 				     }, function(errorResponse) {
 					     $scope.error = errorResponse.data.message;
