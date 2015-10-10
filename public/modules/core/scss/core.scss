@@ -260,14 +260,13 @@ body{
 }
 
 #main-wrapper{
-    position: fixed;
     top:0;
     left: 0;
     height: 100%;
     width: 100%;
-    background: #9E9E9E;
-    background-attachment: fixed;
     background-image:url('../img/backgrounds/bg.jpg');
+    opacity: 0.7;
+    background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     overflow: scroll;
@@ -276,13 +275,13 @@ body{
     &:before{
 	content:'';
 	display: block;
-	position: absolute;
+	position: fixed;
 	top:0;
 	left:0;
 	width: 100%;
 	height: 100%;
-	background: #9E9E9E;
-	opacity: 0.6;
+	background: #1467AB;
+	opacity: 0.8;
     }
 
 }
@@ -443,13 +442,13 @@ body{
 
 .signup-wrapper{
     background: black !important;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .login-wrapper{
-    background: gray;
-    opacity: 0.7;
-    padding: 0.5em 0; 
+    background:black;
+    opacity: 0.9;
+    padding: 0.5em 0;
     
     .login{
 	position: relative;
