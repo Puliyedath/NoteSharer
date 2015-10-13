@@ -173,40 +173,44 @@ body{
 /*wrappers */
 #search-wrapper{
     z-index: 10000;
-    position: relative;
-    padding: 0 0.2em;
-    display: inline-block;
-    float: right;
-
-
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    display: block;
+    border-top: 1px solid gray;
     #add{
-	float:right;
-	border-radius:100%;
+	display: block;
 	overflow: hidden;
 	background: white;
-	opacity: 0.9;
-	display:inline-block;
-	height:2.5em;
-	width:2.5em;
 	color: black;
 	text-align:center;
 	box-shadow: 0.1em 0.1em 0.1em black;
+	padding: 0.2em 0;
 
-	&:hover{
-	    color: white;
-	    background: black;
+	span{
+	    float: left;
+	    padding: 0 0.5em;
+
+	    &.icon:hover{
+		color: #719FC7;
+		font-size: 1.1em;
+	    }
+
+	    &.icon:active{
+		font-size: 0.9em;
+	    }
+
 	}
 
-	&:active{
-	    font-size: 0.9em;
+	#search{
+	    display: block;
+	    right: 0;
+	    width: 85%;
 	}
-	
 
-	& *{
-	    line-height: 2.5em;
-	    height: 2.5em;
-	}
     }
+
 
     &:after{
 	content: '';
@@ -273,7 +277,7 @@ body{
     background-position: center center;
     background-repeat: no-repeat;
     overflow: scroll;
-    padding: 3em 0 0 0;
+    padding: 2em 0 0 0;
     position: absolute;
 
     &:before{
@@ -495,12 +499,13 @@ body{
     left: 0;
     right: 0;
     width: 30%;
-    height: 100%;
+    height: 89%;
     overflow :auto;
-    padding: 0;
+    padding: 0.5em 0 0 0;
     margin: 0;
     background-color: #E7E9EC;
     border-right: 2px solid gray;
+    box-shadow: 0.1em 0.1em 0.1em black;
     
 
     .note{
@@ -598,9 +603,9 @@ body{
     left: 0;
     width :100%;
     height: 100%;
-    padding: 3em 3em 3em 40%;
+    padding: 6em 3em 3em 40%;
     background-color: none;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
     .data{
 	display:inline-block;
