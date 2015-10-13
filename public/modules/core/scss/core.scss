@@ -172,6 +172,7 @@ body{
 
 /*wrappers */
 #search-wrapper{
+    z-index: 10000;
     position: relative;
     padding: 0 0.2em;
     display: inline-block;
@@ -619,6 +620,7 @@ body{
 	.contents{
 	    height: 80%;
 	    width: 100%;
+	    line-height: 1.4em;
 	}
 
 	.contents textarea{

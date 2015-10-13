@@ -127,6 +127,7 @@ a {
 
 /*wrappers */
 #search-wrapper {
+  z-index: 10000;
   position: relative;
   padding: 0 0.2em;
   display: inline-block;
@@ -455,7 +456,8 @@ a {
       border-bottom: 1px solid gray; }
     .noteForm .data .contents {
       height: 80%;
-      width: 100%; }
+      width: 100%;
+      line-height: 1.4em; }
     .noteForm .data .contents textarea {
       height: 100%;
       width: 100%;
