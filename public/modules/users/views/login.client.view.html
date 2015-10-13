@@ -1,11 +1,12 @@
 <div class="fullHeight" data-ng-controller="NotesController">
-	<div id="search-wrapper">
-		<div id="add">
-			<span ng-click="display(null)" class="icon fa-sticky-note"></span>
-		</div>
-	</div>
-
 	<div class="notesPanel">
+		<div id="search-wrapper">
+			<div id="add">
+				<span ng-click="display(null)" class="icon fa-sticky-note-o"></span>
+				<input id="search" type="text" placeholder="search for Notes" />
+			</div>
+		</div>
+
 		<div ng-repeat="note in notes" ng-click="display(note)">
 			<notes-directive note="note" on-submit="passData(note)" visible="visible"></notes-directive>
 		</div>
@@ -21,7 +22,7 @@
 			</div>
 			<div class="footer">
 				<span ng-show="editMode" ng-click="update()" class="icon fa-floppy-o""></span>
-				<span ng-hide="editMode" class="icon fa-plus-square-o"></span>
+				<span ng-click="create()" ng-hide="editMode" class="icon fa-plus-square-o"></span>
 				<span class="icon fa-share-square-o"></span>
 			</div>
 		</div>
