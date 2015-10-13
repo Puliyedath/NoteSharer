@@ -1,15 +1,11 @@
 <section ng-show="visible" class="note">
-	<form data-ng-submit="submit()" autocomplete="off" novalidate>
-		<div class="header" ng-click="toggle()">
+	<div class="userInfo"></div>
+	<div class="noteItem">
+		<div class="header">
 			<input type="text" ng-model="note.name" name="title" placeholder="Title" ng-disabled="{{disabled}}" />
 		</div>
-		<div class="contents" ng-click="toggle()">
+		<div class="contents">
 			<textarea ng-model="note.description" placeholder="notes details" ng-disabled="{{disabled}}"/>
 		</div>
-		<div class="footer">
-		  <input ng-show="show" class="button" type="submit" name="add" value="addNote" />
-		  <input ng-click="update()" ng-show="!disabled" class="button" type="submit" name="add" value="upDateNote" />
-		  <input ng-click="delete()" ng-hide="show" class="button" type="submit" name="add" value="delNote" />
-		</div>
-	</form>
+	</div>
 </section>
