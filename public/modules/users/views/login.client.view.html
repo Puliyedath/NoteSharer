@@ -1,14 +1,35 @@
-<div data-ng-controller="NotesController">
-  <div id="search-wrapper">
-    <div id="add">
-      <span ng-click="toggle()" class="icon fa-sticky-note"></span>
-    </div>
-  </div>
-  <notes-directive show="true" on-submit="passData(note)" visible="{{visible}}"></notes-directive>
+<div class="fullHeight" data-ng-controller="NotesController">
+	<div id="search-wrapper">
+		<div id="add">
+			<span ng-click="toggle()" class="icon fa-sticky-note"></span>
+		</div>
+	</div>
 
-  <div ng-repeat="note in notes" style="padding: 1em 0 ">
-	    <notes-directive note="note" on-submit="passData(note)" visible="visible"></notes-directive>
-  </div>
-  
+	<div class="notesPanel">
+		<div ng-repeat="note in notes" ng-click="toggle(note)">
+			<notes-directive note="note" on-submit="passData(note)" visible="visible"></notes-directive>
+		</div>
+	</div>
+
+	<form ng-submit="submit()" class="noteForm" autocomplete="off" novalidate>
+		<div class="data">
+			<div class="header" ng-click="toggle()">
+				<input type="text" ng-model="note.name" name="title" placeholder="Title" ng-disabled="{{disabled}}" />
+			</div>
+			<div class="contents" ng-click="toggle()">
+				<textarea ng-model="note.description" placeholder="notes details" ng-disabled="{{disabled}}"></textarea>
+			</div>
+			<div class="footer">
+				<span class="icon fa-floppy-o""></span>
+				<span class="icon fa-pencil-square-o"></span>
+				<span class="icon fa-share-square-o"></span>
+	
+			</div>
+		</div>
+
+	</form>
+
+	<!--<notes-directive show="true" on-submit="passData(note)" visible="{{true}}"></notes-directive>-->
+	
 </div>
 
