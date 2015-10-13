@@ -128,7 +128,9 @@ a {
 /*wrappers */
 #search-wrapper {
   position: relative;
-  padding: 0 0.2em; }
+  padding: 0 0.2em;
+  display: inline-block;
+  float: right; }
   #search-wrapper #add {
     float: right;
     border-radius: 100%;
@@ -197,7 +199,8 @@ a {
   background-position: center center;
   background-repeat: no-repeat;
   overflow: scroll;
-  padding: 3em 0 0 0; }
+  padding: 3em 0 0 0;
+  position: absolute; }
   #main-wrapper:before {
     content: '';
     display: block;
@@ -352,59 +355,121 @@ a {
         padding: 0.2em 0.3em; }
 
 /*Note styling */
-.note {
-  position: relative;
+.notesPanel {
+  z-index: 100001;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  overflow: auto;
   padding: 0;
   margin: 0;
-  margin: 0 auto;
-  width: 50%;
-  height: 12em;
-  background-color: #fff;
-  box-shadow: 0.3em 0.2em 0.5em 0 black; }
-  .note:before {
-    content: '';
+  background-color: #E7E9EC;
+  border-right: 2px solid gray; }
+  .notesPanel .note {
+    position: relative;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
-    background-color: none; }
-  .note form {
-    margin: 0;
-    position: relative;
-    height: 12em; }
-    .note form .header {
-      padding: 0.2em 0.2em;
-      font-weight: 600;
-      font-size: 1.2em;
-      font-style: italic;
-      line-height: 1.2em;
-      background: grey;
-      opacity: 0.5;
-      border-bottom: 2px solid black;
-      color: #fff; }
-      .note form .header input {
-        background: grey;
-        color: black; }
-    .note form .contents {
-      display: inline-block;
+    padding: 0; }
+    .notesPanel .note:before {
+      content: '';
+      top: 0;
+      left: 0;
+      height: 100%;
       width: 100%;
-      padding-bottom: 0.5em; }
-      .note form .contents textarea {
-        width: 100%;
-        padding: 0.2em;
-        height: 10em;
-        resize: none;
-        font-size: 0.7em;
-        line-height: 1.4em;
-        border-bottom: 1px solid black; }
-    .note form .footer {
-      position: absolute;
-      right: 0.1em;
-      bottom: 0.1em; }
-      .note form .footer input.button {
-        font-size: 0.7em;
-        padding: 0 0.8em;
-        background: black;
-        color: #fff;
+      background-color: #fff; }
+    .notesPanel .note .noteItem {
+      margin: 0;
+      padding: 0.3em 0.3em;
+      position: relative;
+      background-color: #fff;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 300; }
+      .notesPanel .note .noteItem:hover {
+        background-color: #fff;
+        opacity: 0.5; }
+      .notesPanel .note .noteItem .header {
+        font-size: 0.8em;
+        font-weight: 400;
         font-style: italic;
-        font-weight: 700; }
+        line-height: 1em;
+        color: #fff;
+        padding-top: 0.5em; }
+        .notesPanel .note .noteItem .header input {
+          color: black; }
+      .notesPanel .note .noteItem .contents {
+        display: inline-block;
+        width: 100%;
+        opacity: 0.6; }
+        .notesPanel .note .noteItem .contents textarea {
+          width: 100%;
+          padding: 0.2em;
+          resize: none;
+          font-size: 0.7em;
+          line-height: 1.1em;
+          overflow: hidden; }
+      .notesPanel .note .noteItem .footer {
+        padding: 0;
+        position: absolute;
+        top: 0.2em;
+        right: 0.2em;
+        display: inline-block;
+        font-size: 0.8em;
+        color: black; }
+        .notesPanel .note .noteItem .footer input.button {
+          font-size: 0.5em;
+          padding: 0;
+          margin: 0;
+          background: black;
+          opacity: 0.9;
+          color: #fff;
+          font-style: italic;
+          font-weight: 500; }
+
+.fullHeight {
+  height: 100%; }
+
+.noteForm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 3em 3em 3em 40%;
+  background-color: none;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+  .noteForm .data {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0 2em;
+    background: #fff;
+    font-size: 0.7em; }
+    .noteForm .data .header {
+      padding: 0 0 0 5px;
+      border-bottom: 1px solid gray;
+      font-weight: 500;
+      text-align: left center;
+      border-bottom: 1px solid gray; }
+    .noteForm .data .contents {
+      height: 80%;
+      width: 100%; }
+    .noteForm .data .contents textarea {
+      height: 100%;
+      width: 100%;
+      padding: 3px 0 0 5px;
+      border-bottom: 1px solid gray; }
+    .noteForm .data .footer {
+      display: inline-block;
+      float: right;
+      padding: 1em 0;
+      position: relative;
+      font-size: 1.5em;
+      color: black; }
+      .noteForm .data .footer span {
+        padding: 1em 0.5em; }
+        .noteForm .data .footer span:hover {
+          color: #6F9EC5;
+          font-size: 1.2em; }
