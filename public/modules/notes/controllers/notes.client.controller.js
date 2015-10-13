@@ -86,8 +86,9 @@ angular.module('notes')
 				     });
 			     };
 
-			     $scope.toggle = function(){
-				     $scope.visible = !$scope.visible;
+			     $scope.toggle = function(note){
+				 console.log(note);
+				 $scope.visible = !$scope.visible;
+				 $scope.note = note;
 			     };
-		     }
-					     ]);
+		     }]);
