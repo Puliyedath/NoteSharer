@@ -1,14 +1,15 @@
 {
-	"name": "notesharer",
-	"version": "0.0.1",
-	"description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js",
-	"dependencies": {
-		"angular": "~1.2",
-		"angular-resource": "~1.2", 
-		"angular-mocks": "~1.2", 
-		"angular-touch": "~1.2", 
-		"angular-sanitize": "~1.2", 
-		"angular-ui-utils": "~0.1.1",
-		"angular-ui-router": "~0.2.10" 
-	}
+  "name": "notesharer",
+  "version": "0.0.1",
+  "description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js",
+  "dependencies": {
+    "angular": "~1.2",
+    "angular-mocks": "~1.2",
+    "angular-resource": "~1.2",
+    "angular-sanitize": "~1.2",
+    "angular-touch": "~1.2",
+    "angular-ui-router": "~0.2.10",
+    "angular-ui-utils": "~0.1.1",
+    "AngularJS-Toaster": "angularjs-toaster#~0.4.15"
+  }
 }

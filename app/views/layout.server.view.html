@@ -50,7 +50,6 @@
 			<div id="main-wrapper">
 				{% block content %} {% endblock %}
 			</div>
-
 		</div>
 
 
@@ -69,6 +68,9 @@
 		<!--Livereload script rendered -->
 		<!-- <script type="text/javascript" src="http://localhost:35729/livereload.js"></script> -->
 		{% endif %}
+
+		<!-- toaster container -->
+		<toaster-container class="center" toaster-options="{'time-out': 2000}"></toaster-container>
 	</body>
 
 </html>
