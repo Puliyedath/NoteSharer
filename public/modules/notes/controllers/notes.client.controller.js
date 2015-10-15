@@ -3,8 +3,8 @@
 // Notes controller
 angular.module('notes')
     .controller('NotesController',
-		['$scope', '$stateParams', '$location', 'Authentication', 'Notes',
-		 function($scope, $stateParams, $location, Authentication, Notes) {
+		['$scope', '$stateParams', '$location', 'Authentication', 'Notes','toaster',
+		 function($scope, $stateParams, $location, Authentication, Notes, toaster) {
 
 		     $scope.visible = false;
 		     
@@ -34,14 +34,15 @@ angular.module('notes')
 			 note.$save(function(response) {
 			     $location.path('/hareesh');
 			     $scope.notes.unshift(note);
-			     $scope.visible = false;
+			     toaster.pop('success', '','Note created');
 			 }, function(errorResponse) {
 			     $scope.error = errorResponse.data.message;
+			     toaster.pop('error', '',$scope.error);
 			 });
 
 			 // Clear form fields
 			 this.name = '';
-			 this.note =''; //line 14 above
+			 this.note = note; //line 14 above
 		     };
 
 		     // Remove existing Note
@@ -58,18 +59,26 @@ angular.module('notes')
 				 $location.path('/hareesh');
 			     });
 			 }
-			 $scope.visible = false;
 
+			 //close the new note window only if the selected note is the deleted note
+			 if (note._id === $scope.note._id){
+			     console.log('toggle');
+			     $scope.toggle();
+			 }
 		     };
 
 		     // Update existing Note
 		     $scope.update = function() {
+			 console.log('called update');
 			 var note = $scope.note;
 
 			 note.$update(function() {
 			     $location.path('/hareesh');
+			     console.log(toaster);
+			     toaster.pop('success', '','Note updated');
 			 }, function(errorResponse) {
 			     $scope.error = errorResponse.data.message;
+			     toaster.pop('error', '',$scope.error);
 			 });
 
 		     };
@@ -87,7 +96,6 @@ angular.module('notes')
 		     };
 
 		     $scope.display = function(note){
-			 console.log('hehe');
 			 if(note) {
 			     //edit Mode
 			     $scope.editMode = true;
@@ -95,11 +103,19 @@ angular.module('notes')
 			     //add Mode
 			     $scope.editMode = false;
 			 }
-			 
+
+			 if(!$scope.visible){
+			     $scope.toggle();
+			 }
+
 			 $scope.note = note;
+
+
 		     };
 
 		     $scope.toggle = function(note){
 			 $scope.visible = !$scope.visible;
 		     };
+
+		     
 		 }]);

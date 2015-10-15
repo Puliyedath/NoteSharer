@@ -12,7 +12,7 @@
 		</div>
 	</div>
 
-	<form ng-submit="submit()" class="noteForm" autocomplete="off" novalidate>
+	<form ng-show="visible" ng-submit="submit()" class="noteForm" autocomplete="off" novalidate>
 		<div class="data">
 			<div class="header">
 				<input type="text" ng-model="note.name" name="title" placeholder="Title" ng-disabled="{{disabled}}" />
@@ -28,7 +28,7 @@
 		</div>
 
 	</form>
-
+	
 	<!--<notes-directive show="true" on-submit="passData(note)" visible="{{true}}"></notes-directive>-->
 	
 </div>

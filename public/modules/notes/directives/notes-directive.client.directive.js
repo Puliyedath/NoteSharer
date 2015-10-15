@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('notes').directive('notesDirective', [
-    function() {
+
+angular.module('notes').directive('notesDirective', ['toaster',
+    function(toaster) {
 	return {
 	    scope:{
 		visible: '@visible',
@@ -14,10 +15,6 @@ angular.module('notes').directive('notesDirective', [
 		$scope.note = $scope.note || {};
 		$scope.show = attrs.show;
 		$scope.disabled = true;
-		element.onclick = function(){
-		    $scope.disabled = true;
-		};
-		
 	    },
 	    controller: function($scope){
 		$scope.toggle = function(){
@@ -31,10 +28,10 @@ angular.module('notes').directive('notesDirective', [
 		    this.submit();
 		};
 
-		$scope.delete  = function(){
+		$scope.deleteNote  = function(){
 		    $scope.note.delete = true;
 		    $scope.disabled = true;
-		    this.submit();
+		    this.onSubmit({note: $scope.note});
 		};
 
 		$scope.toggle = function(){
@@ -43,6 +40,31 @@ angular.module('notes').directive('notesDirective', [
 		    }
 
 		};
+
+		$scope.delete = function(){
+		    toaster.pop({
+			type: 'warning',
+			title: $scope.note.name + ' deleted',
+			//body: '<a>Yes</a>',
+			timeout: 2000,
+			bodyOutputType: 'trustedHtml',
+			showCloseButton: true
+		    });
+
+		    console.log($scope.note);
+
+		    $scope.deleteNote();
+		};
+
+		$scope.hoverIn = function(){
+		    $scope.hover = true;
+		};
+		
+		$scope.hoverOut = function(){
+		    $scope.hover = false;
+		};
+
+
 
 	    },
 	    replace: true
