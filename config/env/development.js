@@ -6,8 +6,8 @@ module.exports = {
 		title: 'NoteSharer - Development Environment'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+		clientID: process.env.FACEBOOK_ID || '1624050821188197',
+		clientSecret: process.env.FACEBOOK_SECRET || '88b97df6419f6407abfad1cebbbe5983',
 		callbackURL: 'http://localhost:3000/auth/facebook/callback'
 	},
 	twitter: {
