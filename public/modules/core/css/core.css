@@ -117,6 +117,10 @@ a {
 .readOnly {
   disabled: true; }
 
+.gitHub {
+  color: red;
+  background: #DD5044 !important; }
+
 /* body and container resizing */
 @media screen and (max-width: 1680px) {
   body .pennant span {
@@ -126,15 +130,28 @@ a {
 
 @media screen and (max-width: 980px) {
   body {
-    font-size: 12pt; }
+    font-size: 13pt; }
+    body #search-wrapper {
+      width: 30%;
+      font-size: 13pt; }
     body #banner header.major {
       line-height: 2em; }
     body .pennant span {
-      font-size: 80px; } }
+      font-size: 80px; }
+    body .notesPanel {
+      width: 30%;
+      height: 91%;
+      font-size: 14pt; } }
 
 @media screen and (max-width: 840px) {
   body {
     font-size: 11pt; }
+    body .notesPanel, body #search-wrapper {
+      width: 100%; }
+    body .notesPanel {
+      height: 90%; }
+    body #search-wrapper {
+      font-size: 18pt; }
     body .pennant span {
       font-size: 70px; }
     body #aboutMe-wrapper {
@@ -382,6 +399,18 @@ a {
     .login-wrapper .login p, .login-wrapper .signup p {
       color: black;
       padding-bottom: 0.5em; }
+      .login-wrapper .login p a, .login-wrapper .signup p a {
+        display: block;
+        width: 100%;
+        border: 1px solid white;
+        background: #46629E;
+        color: white;
+        font-weight: 600;
+        text-decoration: none; }
+        .login-wrapper .login p a:hover, .login-wrapper .signup p a:hover {
+          border: 3px solid white; }
+        .login-wrapper .login p a:active, .login-wrapper .signup p a:active {
+          border: 3px solid red; }
       .login-wrapper .login p input, .login-wrapper .signup p input {
         padding: 0 0.5em;
         box-shadow: 0.5em;

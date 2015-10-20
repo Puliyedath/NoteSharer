@@ -159,6 +159,12 @@ input{
     disabled: true;
 }
 
+.gitHub{
+    color: red;
+    background: #DD5044 !important;
+}
+
+
 
 /* body and container resizing */	    
 
@@ -177,7 +183,13 @@ body{
     }
 
     @media #{$minitablet}{
-	font-size: 12pt;
+	font-size: 13pt;
+
+	#search-wrapper{
+	    width: 30%;
+	    font-size: 13pt;
+	}
+	
 	#banner{
 	    header.major{
 		line-height: 2em;
@@ -187,10 +199,28 @@ body{
 	    font-size: 80px;
 	}
 
+	.notesPanel{
+	    width: 30%;
+	    height: 91%;
+	    font-size: 14pt;
+	}
+
     }
     
     @media #{$phone}{
-	
+
+	.notesPanel, #search-wrapper{
+	    width: 100%;
+	}
+
+	.notesPanel{
+	    height: 90%;
+	}
+
+	#search-wrapper{
+	    font-size:18pt;
+	}
+
 	font-size: 11pt;
 	.pennant span{
 	    font-size: 70px;
@@ -547,6 +577,24 @@ body{
 	    color: black;
 	    padding-bottom: 0.5em;
 
+	    a{
+		display:block;
+		width: 100%;
+		border: 1px solid white;
+		background:#46629E;
+		color: white;
+		font-weight: 600;
+		text-decoration:none;
+
+		&:hover{
+		    border: 3px solid white;
+		}
+
+		&:active{
+		    border: 3px solid red;
+		}
+	    }
+
 	    input{
 		padding: 0 0.5em;
 		box-shadow: 0.5em;
@@ -566,8 +614,8 @@ body{
 		text-align: center;
 		border-radius: 1px;
 	    }
-	    
 	}
+
     }
 }
 

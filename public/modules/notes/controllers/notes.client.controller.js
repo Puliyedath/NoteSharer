@@ -78,7 +78,7 @@ angular.module('notes')
 			     toaster.pop('success', '','Note updated');
 			 }, function(errorResponse) {
 			     $scope.error = errorResponse.data.message;
-			     toaster.pop('error', '',$scope.error);
+			     toaster.pop('error', '',errorResponse.data);
 			 });
 
 		     };
