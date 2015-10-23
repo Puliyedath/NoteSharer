@@ -21,15 +21,12 @@
 				<textarea ng-model="note.description" placeholder="notes details" ng-disabled="{{disabled}}"></textarea>
 			</div>
 			<div class="footer">
-				<span ng-show="editMode" ng-click="update()" class="icon fa-floppy-o""></span>
-				<span ng-click="create()" ng-hide="editMode" class="icon fa-plus-square-o"></span>
+				<span ng-show="note.update" ng-click="update()" class="icon fa-floppy-o""></span>
+				<span ng-click="create()" ng-hide="note.update" class="icon fa-plus-square-o"></span>
 				<span class="icon fa-share-square-o"></span>
 			</div>
 		</div>
 
 	</form>
-	
-	<!--<notes-directive show="true" on-submit="passData(note)" visible="{{true}}"></notes-directive>-->
-	
 </div>
 

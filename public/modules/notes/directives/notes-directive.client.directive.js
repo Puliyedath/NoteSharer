@@ -22,7 +22,7 @@ angular.module('notes').directive('notesDirective', ['toaster',
 
 		$scope.update  = function(){
 		    $scope.note.update = true;
-		    this.submit();
+		    this.onSubmit({note: $scope.note});
 		};
 
 		$scope.delete = function($event){

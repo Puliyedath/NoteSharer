@@ -11,11 +11,11 @@ angular.module('notes')
 		     $scope.authentication = Authentication;
 
 		     $scope.passData = function(note){
-			 $scope.note = note;
 
 			 if(note.delete){
 			     this.remove(note);
 			 }else if(note.update){
+			     $scope.note = note;
 			     this.update();
 			 }else{
 			     this.create();
