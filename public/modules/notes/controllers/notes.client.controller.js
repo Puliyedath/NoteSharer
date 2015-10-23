@@ -100,6 +100,10 @@ angular.module('notes')
 		     };
 
 		     $scope.display = function(note){
+			 if(note){
+			     note.update=true;
+			 }
+			 
 			 if(!$scope.visible){
 			     $scope.toggle();
 			 }
