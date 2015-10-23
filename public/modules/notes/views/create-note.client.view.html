@@ -3,7 +3,7 @@
 	<div class="noteItem">
 		<div class="header">
 		  <input type="text" ng-model="note.name" name="title" placeholder="Title" ng-disabled="{{disabled}}" />
-		  <a ng-click="delete()" ng-show="hover"><span class="icon fa fa-times"></span></a>
+		  <a ng-click="delete($event)" ng-show="hover"><span class="icon fa fa-times"></span></a>
 		</div>
 		<div class="contents">
 			<textarea ng-model="note.description" placeholder="notes details" ng-disabled="{{disabled}}"/>

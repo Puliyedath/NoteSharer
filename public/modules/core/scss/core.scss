@@ -185,6 +185,11 @@ body{
     @media #{$minitablet}{
 	font-size: 13pt;
 
+	.login {
+	    form{
+		width: 60%;
+	    }
+	}
 	#search-wrapper{
 	    width: 30%;
 	    font-size: 13pt;

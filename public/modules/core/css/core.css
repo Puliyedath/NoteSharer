@@ -131,6 +131,8 @@ a {
 @media screen and (max-width: 980px) {
   body {
     font-size: 13pt; }
+    body .login form {
+      width: 60%; }
     body #search-wrapper {
       width: 30%;
       font-size: 13pt; }

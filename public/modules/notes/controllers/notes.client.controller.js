@@ -48,16 +48,20 @@ angular.module('notes')
 		     // Remove existing Note
 		     $scope.remove = function(note) {
 			 if (note) {
-			     note.$remove();
-			     for (var i in $scope.notes) {
-				 if ($scope.notes[i] === note) {
-				     $scope.notes.splice(i, 1);
+			     note.$remove(function(sucess){
+				 for (var i in $scope.notes) {
+				     if ($scope.notes[i] === note) {
+					 $scope.notes.splice(i, 1);
+				     }
 				 }
-			     }
-			 } else {
-			     $scope.note.$remove(function() {
-				 $location.path('/hareesh');
+			     }, function(errorResponse){
+				 toaster.pop('error', '',errorResponse.data + ' to delete this note');
 			     });
+			 } else {
+			     //$scope.note.$remove(function() {
+			     //$location.path('/hareesh');
+			     //});
+			     alert('i am not supposed to be here');
 			 }
 
 			 //close the new note window only if the selected note is the deleted note
@@ -78,7 +82,7 @@ angular.module('notes')
 			     toaster.pop('success', '','Note updated');
 			 }, function(errorResponse) {
 			     $scope.error = errorResponse.data.message;
-			     toaster.pop('error', '',errorResponse.data);
+			     toaster.pop('error', '',errorResponse.data + ' to update this note');
 			 });
 
 		     };
@@ -96,18 +100,10 @@ angular.module('notes')
 		     };
 
 		     $scope.display = function(note){
-			 if(note) {
-			     //edit Mode
-			     $scope.editMode = true;
-			 }else{
-			     //add Mode
-			     $scope.editMode = false;
-			 }
-
 			 if(!$scope.visible){
 			     $scope.toggle();
 			 }
-
+			 
 			 $scope.note = note;
 
 
