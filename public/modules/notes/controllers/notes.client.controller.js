@@ -71,6 +71,18 @@ angular.module('notes')
 			 }
 		     };
 
+		     //share the note with other users
+		     $scope.share = function(){
+			 $scope.note.public = true;
+			 $scope.note.$update(function(){
+			     toaster.pop('success', '','Note shared');
+			 }, function(errorResponse){
+			     $scope.error = errorResponse.data.message;
+			     toaster.pop('error', '',errorResponse.data + ' to share this note');
+			     $scope.note.public = false;
+			 });
+		     };
+
 		     // Update existing Note
 		     $scope.update = function() {
 			 console.log('called update');
