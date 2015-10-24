@@ -21,8 +21,11 @@
 				<textarea ng-model="note.description" placeholder="notes details" ng-disabled="{{disabled}}"></textarea>
 			</div>
 			<div class="footer">
-				<span ng-click="update(note)" class="icon fa-floppy-o""></span>
-				<span ng-click="share()" class="icon fa-share-square-o"></span>
+				<!-- this div will only be display if the user is the owner -->
+				<div ng-show="isOwner()">
+					<span ng-click="update(note)" class="icon fa-floppy-o""></span>
+					<span ng-click="share()" class="icon fa-share-square-o"></span>
+				</div>
 			</div>
 		</div>
 

@@ -35,40 +35,33 @@ angular.module('notes')
 			     $location.path('/hareesh');
 			     $scope.notes.unshift(note);
 			     toaster.pop('success', '','Note created');
+			     $scope.note = note;
+			     console.log($scope.note);
 			 }, function(errorResponse) {
 			     $scope.error = errorResponse.data.message;
 			     toaster.pop('error', '',$scope.error);
 			 });
 
-			 // Clear form fields
-			 this.name = '';
-			 this.note = note; //line 14 above
 		     };
 
 		     // Remove existing Note
 		     $scope.remove = function(note) {
-			 if (note) {
-			     note.$remove(function(sucess){
-				 for (var i in $scope.notes) {
-				     if ($scope.notes[i] === note) {
-					 $scope.notes.splice(i, 1);
-				     }
+			 note.$remove(function(sucess){
+			     for (var i in $scope.notes) {
+				 if ($scope.notes[i] === note) {
+				     $scope.notes.splice(i, 1);
 				 }
-			     }, function(errorResponse){
-				 toaster.pop('error', '',errorResponse.data + ' to delete this note');
-			     });
-			 } else {
-			     //$scope.note.$remove(function() {
-			     //$location.path('/hareesh');
-			     //});
-			     alert('i am not supposed to be here');
-			 }
+			     }
 
-			 //close the new note window only if the selected note is the deleted note
-			 if (note._id === $scope.note._id){
-			     console.log('toggle');
-			     $scope.toggle();
-			 }
+			     // upon successfull deletion - close the new note window only if the selected note is the deleted note
+			     if ($scope.note && $scope.note._id && (note._id === $scope.note._id)){
+				 $scope.toggle();
+			     }
+			 }, function(errorResponse){
+			     toaster.pop('error', '',errorResponse.data + ' to delete this note');
+			 });
+
+
 		     };
 
 		     //share the note with other users
@@ -76,11 +69,31 @@ angular.module('notes')
 			 $scope.note.public = true;
 			 $scope.note.$update(function(){
 			     toaster.pop('success', '','Note shared');
+			     console.log($scope.note);
 			 }, function(errorResponse){
 			     $scope.error = errorResponse.data.message;
 			     toaster.pop('error', '',errorResponse.data + ' to share this note');
 			     $scope.note.public = false;
 			 });
+		     };
+
+		     $scope.isOwner = function(){
+
+			 if($scope.note){
+
+			     //if the note is not attached to the user - this means the note belongs to the usre in the current session
+			     if(!$scope.note.user){
+				 return true;
+			     }
+
+			     //when the user creates a note the user object is attached as as string
+			     if($scope.note.user === $scope.authentication.user._id){
+				 return true;
+			     }
+
+			     return ($scope.note.user._id === $scope.authentication.user._id);
+			 }
+			 return false;
 		     };
 
 		     // Update existing Note
@@ -96,6 +109,7 @@ angular.module('notes')
 			 note.$update(function() {
 			     $location.path('/hareesh');
 			     toaster.pop('success', '','Note updated');
+			     console.log($scope.note);
 			 }, function(errorResponse) {
 			     $scope.error = errorResponse.data.message;
 			     toaster.pop('error', '',errorResponse.data + ' to update this note');
