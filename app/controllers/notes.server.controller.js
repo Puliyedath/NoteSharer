@@ -96,7 +96,8 @@ exports.delete = function(req, res) {
  * List of Notes
  */
 exports.list = function(req, res) {
-	Note.find().sort('-created').populate('user', 'displayName').exec(function(err, notes) {
+    console.log(req.user);
+    Note.find({user: req.user._id}).sort('-created').populate('user', 'displayName').exec(function(err, notes) {
 		if (err) {
 			return res.send(400, {
 				message: getErrorMessage(err)
