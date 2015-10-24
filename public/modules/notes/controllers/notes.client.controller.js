@@ -84,8 +84,14 @@ angular.module('notes')
 		     };
 
 		     // Update existing Note
-		     $scope.update = function() {
-			 var note = $scope.note;
+		     $scope.update = function(note) {
+			 //var note = $scope.note;
+
+			 //creating a note
+			 if(!note.$update){
+			     $scope.create();
+			     return;
+			 }
 
 			 note.$update(function() {
 			     $location.path('/hareesh');
