@@ -65,8 +65,8 @@ angular.module('notes')
 		     };
 
 		     //share the note with other users
-		     $scope.share = function(){
-			 $scope.note.public = true;
+		     $scope.share = function(flag){
+			 $scope.note.public = flag;
 			 $scope.note.$update(function(){
 			     toaster.pop('success', '','Note shared');
 			     console.log($scope.note);

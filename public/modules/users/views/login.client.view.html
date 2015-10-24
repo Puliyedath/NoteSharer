@@ -24,7 +24,8 @@
 				<!-- this div will only be display if the user is the owner -->
 				<div ng-show="isOwner()">
 					<span ng-click="update(note)" class="icon fa-floppy-o""></span>
-					<span ng-click="share()" class="icon fa-share-square-o"></span>
+					<span ng-hide="note.public" ng-click="share(true)" class="icon fa-share-square-o"></span>
+					<span ng-show="note.public" ng-click="share(false)" class="icon fa-chain-broken"></span>
 				</div>
 			</div>
 		</div>
