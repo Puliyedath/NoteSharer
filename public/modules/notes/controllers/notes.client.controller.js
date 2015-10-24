@@ -85,12 +85,10 @@ angular.module('notes')
 
 		     // Update existing Note
 		     $scope.update = function() {
-			 console.log('called update');
 			 var note = $scope.note;
 
 			 note.$update(function() {
 			     $location.path('/hareesh');
-			     console.log(toaster);
 			     toaster.pop('success', '','Note updated');
 			 }, function(errorResponse) {
 			     $scope.error = errorResponse.data.message;

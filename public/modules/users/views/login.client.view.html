@@ -3,11 +3,11 @@
 		<div id="search-wrapper">
 			<div id="add">
 				<span ng-click="display(null)" class="icon fa-sticky-note-o"></span>
-				<input id="search" type="text" placeholder="search for Notes" />
+				<input ng-model="searchText" id="search" type="text" placeholder="search for Notes" />
 			</div>
 		</div>
 
-		<div ng-repeat="note in notes" ng-click="display(note)">
+		<div ng-repeat="note in notes | filter:searchText" ng-click="display(note)">
 			<notes-directive note="note" on-submit="passData(note)" visible="visible"></notes-directive>
 		</div>
 	</div>
